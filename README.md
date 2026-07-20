@@ -1,6 +1,6 @@
 # neurofive-ml-track
 
-Machine Learning track — Exploratory Data Analysis (EDA) projects.
+Machine Learning track -> Exploratory Data Analysis (EDA) projects.
 
 ## Task 1: Titanic Dataset EDA
 
@@ -33,11 +33,11 @@ Cleaning the dataset and exploring patterns visually using matplotlib and seabor
 - Among numerical features, `Pclass` has the strongest correlation with survival (-0.34), followed by `Fare` (0.26). `Age` showed almost no correlation.
 
 ## Files
-- `titanic_eda.ipynb` — the main notebook covering both tasks
+- `titanic_eda.ipynb` -> the main notebook covering both tasks
 
 ## Tools Used
 - Python, pandas, numpy, matplotlib, seaborn
 - Google Colab / Jupyter Notebook
 
 ## Author
-**Zaka Saleem** — [@zakasaleem35-jpg](https://github.com/zakasaleem35-jpg)
+**Zaka Saleem** -> [@zakasaleem35-jpg](https://github.com/zakasaleem35-jpg)
