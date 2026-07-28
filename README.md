@@ -29,7 +29,7 @@ What's included
 
 Key Findings
 
-* `Sex` most strongly affects survival — most male passengers did not survive (≈468 died vs 109 survived), while most female passengers survived (≈233 survived vs 81 died).
+* `Sex` most strongly affects survival : most male passengers did not survive (≈468 died vs 109 survived), while most female passengers survived (≈233 survived vs 81 died).
 * Among numerical features, `Pclass` has the strongest correlation with survival (-0.34), followed by `Fare` (0.26). `Age` showed almost no correlation.
 
 Week 2 · Task 1: Classification Model
@@ -54,20 +54,20 @@ Week 2 · Task 2: House Price Prediction with Linear Regression
 Built a regression model to predict California housing prices.
 Approach
 
-* Dataset: California Housing dataset (loaded via `sklearn.datasets.fetch_california_housing`)
-* Features used: MedInc, HouseAge, AveRooms, AveBedrms, Population
-* Split: Divided data into 80% training and 20% testing sets (`train_test_split`, `random_state=42`)
+* Dataset: California Housing dataset (loaded via `sklearn.datasets.fetch_california_housing`) : 20,640 rows, no missing values
+* Feature selection: Checked correlation of all features with `MedHouseVal` using `df.corr()`, then selected the 5 with the strongest relationships: `MedInc`, `AveRooms`, `HouseAge`, `Latitude`, `Longitude`
+* Split: Divided data into 80% training and 20% testing sets (`train_test_split`, `random_state=42`) : 16,512 training rows and 4,128 test rows
 * Model: Trained a Linear Regression model from scikit-learn
 * Evaluation: Measured performance using RMSE and R² score, and visualized results with a predicted-vs-actual scatter plot
 
 Results
 
-* RMSE: [PENDING — apna actual number run karke daalna]
-* R² Score: [PENDING — apna actual number run karke daalna]
-* A scatter plot of predicted vs. actual prices was used to visually assess model quality
+* RMSE: 0.74
+* R² Score: 0.58
+* The scatter plot shows a reasonably tight cluster around the ideal prediction line for lower-to-mid range prices, with more scatter (and a capped value at 5.0) for higher-priced homes, a known artifact of this dataset, where `MedHouseVal` is capped at $500,000
 
 Key Takeaway
-[PENDING — apne actual R² number ke hisab se 1-2 line likhna ke model kitna accurate hai aur is ka layman explanation]
+Linear Regression achieved an R² score of 0.58, meaning the model explains about 58% of the variation in house prices using just 5 features. In practical terms, the model gives a useful "ballpark" estimate for most homes, but its accuracy drops for higher-value properties,  likely because price at the high end depends on factors (like exact neighborhood desirability) not captured by these 5 features.
 
 Files
 
@@ -80,4 +80,4 @@ Tools Used
 * Google Colab / Jupyter Notebook
 
 Author
-Zaka Saleem — [@zakasaleem35-jpg](https://github.com/zakasaleem35-jpg)
+Zaka Saleem : [@zakasaleem35-jpg](https://github.com/zakasaleem35-jpg)
