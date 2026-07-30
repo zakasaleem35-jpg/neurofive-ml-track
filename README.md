@@ -69,9 +69,35 @@ Results
 Key Takeaway
 Linear Regression achieved an R² score of 0.58, meaning the model explains about 58% of the variation in house prices using just 5 features. In practical terms, the model gives a useful "ballpark" estimate for most homes, but its accuracy drops for higher-value properties,  likely because price at the high end depends on factors (like exact neighborhood desirability) not captured by these 5 features.
 
+## Week 3 · Task 1: Model Evaluation & Tuning
+
+Evaluated the Logistic Regression classifier beyond accuracy and applied hyperparameter tuning to try to improve it.
+
+### Evaluation (Precision, Recall, F1)
+Used `classification_report` to look at per-class performance:
+
+| Class | Precision | Recall | F1-Score |
+|-------|-----------|--------|----------|
+| Died (0) | 0.83 | 0.86 | 0.84 |
+| Survived (1) | 0.79 | 0.74 | 0.76 |
+
+The model has a recall of only **0.74 for survivors**, meaning it misses about 26% of actual survivors. This weakness is invisible in the overall accuracy (81%), which is why accuracy alone can be misleading for imbalanced datasets.
+
+### Hyperparameter Tuning
+Tuned two hyperparameters (`C` and `solver`) using both GridSearchCV and RandomizedSearchCV:
+
+| Model | Accuracy |
+|-------|----------|
+| Original (Default) | 81.01% |
+| Tuned (GridSearchCV) | 78.21% |
+| Tuned (RandomizedSearchCV) | 80.45% |
+
+### Key Takeaway
+None of the tuned versions beat the original default (81.01%) on the test set. For a small, simple dataset like Titanic, the default Logistic Regression settings were already near-optimal, so tuning offered little room for improvement, a reminder that more tuning doesn't always mean better results.
+
 Files
 
-* `titanic_eda.ipynb` : EDA, cleaning, visualization, and classification model
+* `titanic_eda_weeks.ipynb` : EDA, cleaning, visualization, classification model, and model evaluation/tuning
 * `house_price_regression.ipynb` : regression model for house price prediction
 
 Tools Used
